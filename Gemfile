@@ -11,6 +11,7 @@ gem 'rack-cors'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
 gem 'webpacker'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
