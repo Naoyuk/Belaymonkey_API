@@ -16,4 +16,6 @@ class User < ApplicationRecord
     multi_pitches: 3,
     alpine: 4,
   }
+
+  has_many :posts
 end
