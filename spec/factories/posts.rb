@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :post do
-    user { nil }
-    date { "2021-09-04" }
-    start_time { "2021-09-04 09:42:50" }
-    end_time { "2021-09-04 09:42:50" }
-    kind_of_climbing { "MyString" }
+    sequence(:date) { |n| n.days.from_now }
+    start_time { "10:00" }
+    end_time { "19:00" }
+    kind_of_climbing { 0 }
+    association :user
   end
 end

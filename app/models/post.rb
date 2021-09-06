@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  validates :date, presence: true
+
   scope :default_search, -> { where("date >= ?", Time.current) }
 
   # scope :search, -> (search_params) do
