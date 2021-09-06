@@ -1,38 +1,40 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :request do
-  describe "GET /index" do
+  describe "GET /api/v1/posts" do
     it "returns http success" do
-      get "/posts/index"
+      get "/api/v1/posts"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /show" do
+  describe "GET /api/v1/posts/:id" do
     it "returns http success" do
-      get "/posts/show"
+      get "/api/v1/posts/:id"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /create" do
+  describe "POST /api/v1/posts" do
     it "returns http success" do
-      get "/posts/create"
+      post "/api/v1/posts"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /update" do
+  describe "PUT /api/v1/posts/:id" do
     it "returns http success" do
-      get "/posts/update"
+      put "/api/v1/posts/:id"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /delete" do
-    it "returns http success" do
-      get "/posts/delete"
-      expect(response).to have_http_status(:success)
+  context 'delete posts' do
+    describe "DELETE /api/v1/posts/:id" do
+      it "returns http success" do
+        delete "/api/v1/posts/:id"
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
