@@ -4,6 +4,6 @@ FactoryBot.define do
     start_time { "10:00" }
     end_time { "19:00" }
     kind_of_climbing { 0 }
-    association :user
+    association :owner
   end
 end
