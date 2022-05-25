@@ -23,6 +23,5 @@ FactoryBot.define do
     trait :created_5_days_ago do
       date { 5.days.ago }
     end
-
   end
 end

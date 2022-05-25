@@ -1,24 +1,19 @@
-# README
+# BelayMonkey API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BelayMonkey is an application that makes it easy to find a climbing partner.  
+The goal of this application is to make it easier to find a reliable belay partner or a bouldering buddy when you go on a climbing trip to an unknown area.  
+Use BelayMonkey to get the best climbing experience on your climbing trip!
 
-Things you may want to cover:
+## APIs
 
-* Ruby version
+* Read active posts
+`GET /api/v1/post`
 
-* System dependencies
+* Create new post
+`POST /api/v1/post`
 
-* Configuration
+* Update own post
+`PUT /api/v1/post/:id`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Delete own post
+`Delete /api/v1/post/:id`

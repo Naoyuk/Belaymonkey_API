@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  # skip_before_action :authenticate_user!
-  before_action :set_post, only: %i[show update destroy]
+  skip_before_action :authenticate_user!
 
   def index
     posts = Post.default_search
@@ -10,28 +9,33 @@ class PostsController < ApplicationController
   end
 
   def show
-    render json: @post.to_json
+    post = Post.find(params[:id])
+    render json: post.to_json
   end
 
   def create
     post = Post.new(post_params)
-    render json: post.to_json if post.save
+    if post.save
+      render json: post.to_json
+    end
   end
 
   def update
-    render json: @post.to_json if @post.update(post_params)
+    post = Post.find(params[:id])
+    if post.update(post_params) 
+      render json: post.to_json
+    end
   end
 
   def delete
-    render json: @post.to_json if @post.destroy
+    post = Post.find(params[:id])
+    if post.destroy
+      render json: post.to_json
+    end
   end
 
   private
-
-  def set_post
-    @post = Post.find(params[:id])
-  end
-
+  
   def post_params
     params.require(:post).permit(:date, :start_time, :end_time, :kind_of_climbing)
   end

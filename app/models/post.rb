@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   validates :date, presence: true
 
-  scope :default_search, -> { where('date >= ?', Time.current) }
+  scope :default_search, -> { where("date >= ?", Time.current) }
 
   # scope :search, -> (search_params) do
   #   return if search_params.blank?
