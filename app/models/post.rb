@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
   belongs_to :owner, class_name: 'User', foreign_key: :user_id
 
   validates :date, presence: true
 
-  scope :default_search, -> { where("date >= ?", Time.current) }
+  scope :default_search, -> { where('date >= ?', Time.current) }
 
   # scope :search, -> (search_params) do
   #   return if search_params.blank?

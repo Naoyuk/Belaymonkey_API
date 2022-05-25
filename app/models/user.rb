@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -6,7 +8,7 @@ class User < ApplicationRecord
 
   enum gender: {
     male: 0,
-    female: 1,
+    female: 1
   }
 
   enum kind_of_climbing: {
@@ -14,7 +16,7 @@ class User < ApplicationRecord
     sport: 1,
     bouldering: 2,
     multi_pitches: 3,
-    alpine: 4,
+    alpine: 4
   }
 
   has_many :posts
