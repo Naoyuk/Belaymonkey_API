@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.0.4'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
@@ -15,11 +15,9 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
 gem 'webpacker'
-gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
 end

@@ -13,6 +13,11 @@ class PostsController < ApplicationController
     render json: post.to_json
   end
 
+  def edit
+    post = Post.find(params[:id])
+    render json: post.to_json
+  end
+
   def create
     post = Post.new(post_params)
     if post.save
